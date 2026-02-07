@@ -61,12 +61,6 @@ export default function SecretsPage() {
     setDialogOpen(true);
   };
 
-  const handleViewSecret = (path: string) => {
-    setSelectedSecret(path);
-    setDialogMode("view");
-    setDialogOpen(true);
-  };
-
   const handleEditSecret = (path: string) => {
     setSelectedSecret(path);
     setDialogMode("edit");
@@ -153,7 +147,6 @@ export default function SecretsPage() {
         <SecretList
           secrets={secrets}
           currentPath={currentPath}
-          onViewSecret={handleViewSecret}
           onEditSecret={handleEditSecret}
           onDeleteSecret={handleDeleteSecret}
           onNavigateToFolder={handleNavigateToFolder}

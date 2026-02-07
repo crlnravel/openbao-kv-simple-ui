@@ -5,13 +5,12 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Eye, Edit, Trash2, Folder, Key, AlertCircle } from "lucide-react";
+import { Edit, Trash2, Folder, Key, AlertCircle } from "lucide-react";
 import { useAuth } from "@/lib/auth-context";
 
 interface SecretListProps {
   secrets: string[];
   currentPath?: string;
-  onViewSecret: (path: string) => void;
   onEditSecret: (path: string) => void;
   onDeleteSecret: (path: string) => void;
   onNavigateToFolder: (path: string) => void;
@@ -20,7 +19,6 @@ interface SecretListProps {
 export function SecretList({
   secrets,
   currentPath = "",
-  onViewSecret,
   onEditSecret,
   onDeleteSecret,
   onNavigateToFolder,
@@ -131,15 +129,6 @@ export function SecretList({
 
                   {!folder && (
                     <div className="flex items-center space-x-2 ml-4">
-                      <Button
-                        variant="ghost"
-                        size="sm"
-                        onClick={() => onViewSecret(fullPath)}
-                        disabled={isDeleting}
-                      >
-                        <Eye className="h-4 w-4" />
-                      </Button>
-
                       <Button
                         variant="ghost"
                         size="sm"
