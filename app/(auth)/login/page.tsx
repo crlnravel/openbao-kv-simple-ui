@@ -6,13 +6,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 import { useAuth } from "@/lib/auth-context";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
@@ -121,9 +115,7 @@ export default function LoginPage() {
     <Card>
       <CardHeader>
         <CardTitle>OpenBao Login</CardTitle>
-        <CardDescription>
-          Sign in to access your secrets and configurations
-        </CardDescription>
+        <CardDescription>Sign in to access your secrets and configurations</CardDescription>
       </CardHeader>
       <CardContent>
         <Tabs
@@ -136,10 +128,7 @@ export default function LoginPage() {
           </TabsList>
 
           <TabsContent value="token">
-            <form
-              onSubmit={tokenForm.handleSubmit(onTokenSubmit)}
-              className="space-y-4"
-            >
+            <form onSubmit={tokenForm.handleSubmit(onTokenSubmit)} className="space-y-4">
               <div className="space-y-2">
                 <Label htmlFor="token">Token</Label>
                 <Input
@@ -170,10 +159,7 @@ export default function LoginPage() {
           </TabsContent>
 
           <TabsContent value="userpass">
-            <form
-              onSubmit={userpassForm.handleSubmit(onUserpassSubmit)}
-              className="space-y-4"
-            >
+            <form onSubmit={userpassForm.handleSubmit(onUserpassSubmit)} className="space-y-4">
               <div className="space-y-2">
                 <Label htmlFor="username">Username</Label>
                 <Input

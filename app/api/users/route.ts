@@ -36,10 +36,7 @@ export async function POST(request: NextRequest) {
     const { username, password, policies } = body;
 
     if (!username || !password) {
-      return NextResponse.json(
-        { error: "Username and password are required" },
-        { status: 400 }
-      );
+      return NextResponse.json({ error: "Username and password are required" }, { status: 400 });
     }
 
     const client = new OpenBaoClient(token);

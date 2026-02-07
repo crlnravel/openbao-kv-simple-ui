@@ -69,9 +69,7 @@ export default function UsersPage() {
       <div className="flex items-center justify-between">
         <div>
           <h1 className="text-3xl font-bold">User Management</h1>
-          <p className="text-muted-foreground mt-1">
-            Manage OpenBao users and access control
-          </p>
+          <p className="text-muted-foreground mt-1">Manage OpenBao users and access control</p>
         </div>
 
         <Button onClick={handleCreateUser}>
@@ -92,11 +90,7 @@ export default function UsersPage() {
           <Loader2 className="h-8 w-8 animate-spin" />
         </div>
       ) : (
-        <UserList
-          users={users}
-          onEditUser={handleEditUser}
-          onDeleteUser={handleDeleteUser}
-        />
+        <UserList users={users} onEditUser={handleEditUser} onDeleteUser={handleDeleteUser} />
       )}
 
       <UserDialog

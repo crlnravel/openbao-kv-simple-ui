@@ -4,13 +4,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Alert, AlertDescription } from "@/components/ui/alert";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Eye, Edit, Trash2, Folder, Key, AlertCircle } from "lucide-react";
 import { useAuth } from "@/lib/auth-context";
 
@@ -95,9 +89,7 @@ export function SecretList({
         <CardHeader>
           <CardTitle>Secrets</CardTitle>
           <CardDescription>
-            {currentPath
-              ? `Showing secrets in: ${currentPath}`
-              : "All secrets in the root path"}
+            {currentPath ? `Showing secrets in: ${currentPath}` : "All secrets in the root path"}
           </CardDescription>
         </CardHeader>
         <CardContent>

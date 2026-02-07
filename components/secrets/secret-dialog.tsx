@@ -94,9 +94,7 @@ export function SecretDialog({
       );
 
       const url =
-        mode === "create"
-          ? "/api/secrets"
-          : `/api/secrets/${encodeURIComponent(data.path)}`;
+        mode === "create" ? "/api/secrets" : `/api/secrets/${encodeURIComponent(data.path)}`;
 
       const method = mode === "create" ? "POST" : "PUT";
 

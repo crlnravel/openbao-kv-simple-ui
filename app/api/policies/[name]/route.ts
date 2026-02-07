@@ -5,10 +5,7 @@ function getToken(request: NextRequest): string | null {
   return request.headers.get("x-openbao-token");
 }
 
-export async function GET(
-  request: NextRequest,
-  { params }: { params: Promise<{ name: string }> }
-) {
+export async function GET(request: NextRequest, { params }: { params: Promise<{ name: string }> }) {
   try {
     const token = getToken(request);
     if (!token) {

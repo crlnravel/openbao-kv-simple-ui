@@ -55,9 +55,7 @@ export default function PoliciesPage() {
     <div className="space-y-6">
       <div>
         <h1 className="text-3xl font-bold">Policy Management</h1>
-        <p className="text-muted-foreground mt-1">
-          View OpenBao policies and permissions
-        </p>
+        <p className="text-muted-foreground mt-1">View OpenBao policies and permissions</p>
       </div>
 
       {error && (
@@ -72,17 +70,10 @@ export default function PoliciesPage() {
           <Loader2 className="h-8 w-8 animate-spin" />
         </div>
       ) : (
-        <PolicyList
-          policies={policies}
-          onViewPolicy={handleViewPolicy}
-        />
+        <PolicyList policies={policies} onViewPolicy={handleViewPolicy} />
       )}
 
-      <PolicyDialog
-        open={dialogOpen}
-        onOpenChange={setDialogOpen}
-        policyName={selectedPolicy}
-      />
+      <PolicyDialog open={dialogOpen} onOpenChange={setDialogOpen} policyName={selectedPolicy} />
     </div>
   );
 }

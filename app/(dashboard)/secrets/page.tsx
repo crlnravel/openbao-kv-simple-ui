@@ -128,10 +128,7 @@ export default function SecretsPage() {
                 {isLast ? (
                   <Badge variant="secondary">{part}</Badge>
                 ) : (
-                  <button
-                    onClick={() => setCurrentPath(path)}
-                    className="hover:underline"
-                  >
+                  <button onClick={() => setCurrentPath(path)} className="hover:underline">
                     {part}
                   </button>
                 )}

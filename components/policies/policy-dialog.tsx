@@ -24,11 +24,7 @@ interface PolicyData {
   rules: string;
 }
 
-export function PolicyDialog({
-  open,
-  onOpenChange,
-  policyName,
-}: PolicyDialogProps) {
+export function PolicyDialog({ open, onOpenChange, policyName }: PolicyDialogProps) {
   const { token } = useAuth();
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -81,9 +77,7 @@ export function PolicyDialog({
             <Shield className="h-5 w-5 text-purple-500" />
             <DialogTitle>Policy: {policyName}</DialogTitle>
           </div>
-          <DialogDescription>
-            View policy rules and permissions (read-only)
-          </DialogDescription>
+          <DialogDescription>View policy rules and permissions (read-only)</DialogDescription>
         </DialogHeader>
 
         {isLoading ? (

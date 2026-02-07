@@ -2,13 +2,7 @@
 
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { FileText, Eye } from "lucide-react";
 
 interface PolicyListProps {
@@ -25,9 +19,7 @@ export function PolicyList({ policies, onViewPolicy }: PolicyListProps) {
     return (
       <Card>
         <CardContent className="py-8">
-          <p className="text-center text-muted-foreground">
-            No policies found.
-          </p>
+          <p className="text-center text-muted-foreground">No policies found.</p>
         </CardContent>
       </Card>
     );
@@ -69,11 +61,7 @@ export function PolicyList({ policies, onViewPolicy }: PolicyListProps) {
                   </div>
 
                   <div className="flex items-center space-x-2 ml-4">
-                    <Button
-                      variant="ghost"
-                      size="sm"
-                      onClick={() => onViewPolicy(policy)}
-                    >
+                    <Button variant="ghost" size="sm" onClick={() => onViewPolicy(policy)}>
                       <Eye className="h-4 w-4 mr-2" />
                       View
                     </Button>

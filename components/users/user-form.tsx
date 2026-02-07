@@ -64,14 +64,15 @@ export function UserForm({
           {...register("username")}
           disabled={isEditing || isLoading}
         />
-        {errors.username && (
-          <p className="text-sm text-destructive">{errors.username.message}</p>
-        )}
+        {errors.username && <p className="text-sm text-destructive">{errors.username.message}</p>}
       </div>
 
       <div className="space-y-2">
         <Label htmlFor="password">
-          Password {isEditing && <span className="text-muted-foreground">(leave blank to keep unchanged)</span>}
+          Password{" "}
+          {isEditing && (
+            <span className="text-muted-foreground">(leave blank to keep unchanged)</span>
+          )}
         </Label>
         <Input
           id="password"
@@ -80,9 +81,7 @@ export function UserForm({
           {...register("password")}
           disabled={isLoading}
         />
-        {errors.password && (
-          <p className="text-sm text-destructive">{errors.password.message}</p>
-        )}
+        {errors.password && <p className="text-sm text-destructive">{errors.password.message}</p>}
       </div>
 
       <div className="space-y-2">
@@ -95,9 +94,7 @@ export function UserForm({
           {...register("policies")}
           disabled={isLoading}
         />
-        {errors.policies && (
-          <p className="text-sm text-destructive">{errors.policies.message}</p>
-        )}
+        {errors.policies && <p className="text-sm text-destructive">{errors.policies.message}</p>}
       </div>
 
       {error && (
@@ -108,12 +105,7 @@ export function UserForm({
       )}
 
       <div className="flex justify-end space-x-2">
-        <Button
-          type="button"
-          variant="outline"
-          onClick={onCancel}
-          disabled={isLoading}
-        >
+        <Button type="button" variant="outline" onClick={onCancel} disabled={isLoading}>
           Cancel
         </Button>
         <Button type="submit" disabled={isLoading}>

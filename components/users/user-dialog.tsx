@@ -21,13 +21,7 @@ interface UserDialogProps {
   onSuccess?: () => void;
 }
 
-export function UserDialog({
-  open,
-  onOpenChange,
-  username,
-  mode,
-  onSuccess,
-}: UserDialogProps) {
+export function UserDialog({ open, onOpenChange, username, mode, onSuccess }: UserDialogProps) {
   const { token } = useAuth();
   const [isLoading, setIsLoading] = useState(false);
   const [isFetching, setIsFetching] = useState(false);

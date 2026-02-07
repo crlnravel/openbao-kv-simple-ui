@@ -17,17 +17,13 @@ interface TabsProps extends React.HTMLAttributes<HTMLDivElement> {
 
 const Tabs = React.forwardRef<HTMLDivElement, TabsProps>(
   ({ className, defaultValue = "", value, onValueChange, ...props }, ref) => {
-    const [internalValue, setInternalValue] = React.useState(
-      value || defaultValue
-    );
+    const [internalValue, setInternalValue] = React.useState(value || defaultValue);
 
     const currentValue = value !== undefined ? value : internalValue;
     const handleValueChange = onValueChange || setInternalValue;
 
     return (
-      <TabsContext.Provider
-        value={{ value: currentValue, onValueChange: handleValueChange }}
-      >
+      <TabsContext.Provider value={{ value: currentValue, onValueChange: handleValueChange }}>
         <div ref={ref} className={cn("w-full", className)} {...props} />
       </TabsContext.Provider>
     );
@@ -35,23 +31,21 @@ const Tabs = React.forwardRef<HTMLDivElement, TabsProps>(
 );
 Tabs.displayName = "Tabs";
 
-const TabsList = React.forwardRef<
-  HTMLDivElement,
-  React.HTMLAttributes<HTMLDivElement>
->(({ className, ...props }, ref) => (
-  <div
-    ref={ref}
-    className={cn(
-      "inline-flex h-9 items-center justify-center rounded-lg bg-muted p-1 text-muted-foreground",
-      className
-    )}
-    {...props}
-  />
-));
+const TabsList = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement>>(
+  ({ className, ...props }, ref) => (
+    <div
+      ref={ref}
+      className={cn(
+        "inline-flex h-9 items-center justify-center rounded-lg bg-muted p-1 text-muted-foreground",
+        className
+      )}
+      {...props}
+    />
+  )
+);
 TabsList.displayName = "TabsList";
 
-interface TabsTriggerProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+interface TabsTriggerProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   value: string;
 }
 

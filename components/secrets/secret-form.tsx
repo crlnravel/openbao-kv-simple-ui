@@ -68,9 +68,7 @@ export function SecretForm({
           {...register("path")}
           disabled={isEditing || isLoading}
         />
-        {errors.path && (
-          <p className="text-sm text-destructive">{errors.path.message}</p>
-        )}
+        {errors.path && <p className="text-sm text-destructive">{errors.path.message}</p>}
       </div>
 
       <div className="space-y-2">
@@ -132,9 +130,7 @@ export function SecretForm({
         </div>
 
         {errors.keyValuePairs && (
-          <p className="text-sm text-destructive">
-            {errors.keyValuePairs.message}
-          </p>
+          <p className="text-sm text-destructive">{errors.keyValuePairs.message}</p>
         )}
       </div>
 
@@ -146,12 +142,7 @@ export function SecretForm({
       )}
 
       <div className="flex justify-end space-x-2">
-        <Button
-          type="button"
-          variant="outline"
-          onClick={onCancel}
-          disabled={isLoading}
-        >
+        <Button type="button" variant="outline" onClick={onCancel} disabled={isLoading}>
           Cancel
         </Button>
         <Button type="submit" disabled={isLoading}>

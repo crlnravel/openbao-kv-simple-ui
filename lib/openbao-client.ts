@@ -11,11 +11,7 @@ export class OpenBaoClient {
     this.token = token;
   }
 
-  private async request<T>(
-    method: string,
-    path: string,
-    body?: unknown
-  ): Promise<T> {
+  private async request<T>(method: string, path: string, body?: unknown): Promise<T> {
     const url = `${this.baseUrl}${path}`;
     const headers: Record<string, string> = {
       "X-Vault-Token": this.token,
@@ -58,10 +54,7 @@ export class OpenBaoClient {
   // KV v2 methods
   async listSecrets(path: string = "") {
     const listPath = path ? `/v1/secret/metadata/${path}` : "/v1/secret/metadata";
-    return this.request<{ data: { keys: string[] } }>(
-      "LIST",
-      `${listPath}?list=true`
-    );
+    return this.request<{ data: { keys: string[] } }>("LIST", `${listPath}?list=true`);
   }
 
   async getSecret(path: string) {
@@ -91,10 +84,7 @@ export class OpenBaoClient {
 
   // User management methods
   async listUsers() {
-    return this.request<{ data: { keys: string[] } }>(
-      "LIST",
-      "/v1/auth/userpass/users?list=true"
-    );
+    return this.request<{ data: { keys: string[] } }>("LIST", "/v1/auth/userpass/users?list=true");
   }
 
   async getUser(username: string) {
@@ -131,10 +121,7 @@ export class OpenBaoClient {
 
   // Policy methods
   async listPolicies() {
-    return this.request<{ data: { keys: string[] } }>(
-      "LIST",
-      "/v1/sys/policy?list=true"
-    );
+    return this.request<{ data: { keys: string[] } }>("LIST", "/v1/sys/policy?list=true");
   }
 
   async getPolicy(name: string) {
