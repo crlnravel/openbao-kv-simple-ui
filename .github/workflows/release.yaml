@@ -3,10 +3,10 @@ name: Release
 on:
   push:
     tags:
-      - 'v*.*.*-dev.*' # Dev releases: v1.0.0-dev.1
-      - 'v*.*.*-staging.*' # Staging releases: v1.0.0-staging.1
-      - 'v*.*.*-rc.*' # Release candidates (staging): v1.0.0-rc.1
-      - 'v[0-9]+.[0-9]+.[0-9]+' # Production releases: v1.0.0
+      - "v*.*.*-dev.*" # Dev releases: v1.0.0-dev.1
+      - "v*.*.*-staging.*" # Staging releases: v1.0.0-staging.1
+      - "v*.*.*-rc.*" # Release candidates (staging): v1.0.0-rc.1
+      - "v[0-9]+.[0-9]+.[0-9]+" # Production releases: v1.0.0
 
 env:
   REGISTRY: docker.io
@@ -150,9 +150,9 @@ jobs:
       - name: Run Trivy vulnerability scanner
         uses: aquasecurity/trivy-action@master
         with:
-          image-ref: '${{ env.IMAGE_NAME }}:${{ needs.determine-environment.outputs.image_tag }}'
-          format: 'table'
-          severity: 'CRITICAL,HIGH'
+          image-ref: "${{ env.IMAGE_NAME }}:${{ needs.determine-environment.outputs.image_tag }}"
+          format: "table"
+          severity: "CRITICAL,HIGH"
 
   update-infra:
     name: Update Infrastructure Repository
@@ -200,7 +200,7 @@ jobs:
             Environment: ${{ needs.determine-environment.outputs.environment }}
           branch: deploy/${{ env.APP_NAME }}/${{ needs.determine-environment.outputs.environment }}/${{ needs.determine-environment.outputs.image_tag }}
           delete-branch: true
-          title: '[${{ needs.determine-environment.outputs.environment }}] Deploy ${{ env.APP_NAME }} ${{ needs.determine-environment.outputs.image_tag }}'
+          title: "[${{ needs.determine-environment.outputs.environment }}] Deploy ${{ env.APP_NAME }} ${{ needs.determine-environment.outputs.image_tag }}"
           body: |
             ## Automated Deployment PR
 
